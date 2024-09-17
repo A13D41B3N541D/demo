@@ -1,0 +1,18 @@
+.suggestions {
+    border: 1px solid #ddd;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    z-index: 1000;
+}
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestion-item:hover {
+    background-color: #f1f1f1;
+}

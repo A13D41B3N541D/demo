@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body>
+    <section>
+        <div class="container mt-5">
+            <h2>Recherche avec suggestions</h2>
+            <div class="position-relative">
+                <input type="text" id="search-input" class="form-control" placeholder="Recherchez..." autocomplete="off">
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section>
+    <!-- Bouton pour ouvrir le modal -->
+<div class="d-flex justify-content-center align-items-center"><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#flightSearchModal">
+    Ouvrir le formulaire de recherche de vol
+</button></div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="flightSearchModal" tabindex="-1" aria-labelledby="flightSearchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="flightSearchModalLabel">Recherche de vol</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Boutons pour basculer entre "Aller simple" et "Aller-retour" -->
+                <div class="d-flex justify-content-around mb-3">
+                    <button class="btn btn-outline-primary" id="oneWayBtn">Aller simple</button>
+                    <button class="btn btn-outline-primary" id="roundTripBtn">Aller-retour</button>
+                </div>
+
+                <!-- Formulaire "Aller simple" -->
+                <form id="oneWayForm" style="display: none;">
+                    <div class="mb-3">
+                        <label for="departure" class="form-label">Départ</label>
+                        <input type="text" class="form-control" id="departure" placeholder="Ville de départ">
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination" class="form-label">Destination</label>
+                        <input type="text" class="form-control" id="destination" placeholder="Ville de destination">
+                    </div>
+                    <div class="mb-3">
+                        <label for="departureDate" class="form-label">Date de départ</label>
+                        <input type="date" class="form-control" id="departureDate">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Rechercher un vol</button>
+                </form>
+
+                <!-- Formulaire "Aller-retour" -->
+                <form id="roundTripForm" style="display: none;">
+                    <div class="mb-3">
+                        <label for="departureRound" class="form-label">Départ</label>
+                        <input type="text" class="form-control" id="departureRound" placeholder="Ville de départ">
+                    </div>
+                    <div class="mb-3">
+                        <label for="destinationRound" class="form-label">Destination</label>
+                        <input type="text" class="form-control" id="destinationRound" placeholder="Ville de destination">
+                    </div>
+                    <div class="mb-3">
+                        <label for="departureDateRound" class="form-label">Date de départ</label>
+                        <input type="date" class="form-control" id="departureDateRound">
+                    </div>
+                    <div class="mb-3">
+                        <label for="returnDate" class="form-label">Date de retour</label>
+                        <input type="date" class="form-control" id="returnDate">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Rechercher un vol aller-retour</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div></section>
+<script>
+  
+</script>
+
+</body>
+</html>
