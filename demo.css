@@ -16,3 +16,44 @@
 .suggestion-item:hover {
     background-color: #f1f1f1;
 }
+
+/* Style de la fenêtre contextuelle */
+.dropdown-passengers {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 250px;
+}
+
+.passenger-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.btn-minus, .btn-plus {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#applyPassengers {
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px 0;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Affiche la fenêtre quand l'input est activé */
+.show {
+    display: block;
+}

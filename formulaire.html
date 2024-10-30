@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	
     <!-- Bootstrap JS with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -24,13 +25,8 @@
     
     
     <!-- Bouton pour ouvrir le modal -->
-<div class="d-flex justify-content-center align-items-center"><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#flightSearchModal">
-    Ouvrir le formulaire de recherche de vol
-</button></div><div class="btn btn-primary">Ecrire par Ouedraogo Abdoul wahab</div>
-
-
 <!-- Modal -->
-<div class="modal fade" id="flightSearchModal" tabindex="-1" aria-labelledby="flightSearchModalLabel" aria-hidden="true">
+
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -46,7 +42,7 @@
 
                 <!-- Formulaire "Aller simple" -->
                 <form id="oneWayForm" style="display: none;">
-                    <div class="mb-3">
+                    <div class="mb-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <label for="departure" class="form-label">Départ</label>
                         <input type="text" class="form-control" id="departure" placeholder="Ville de départ">
                     </div>
@@ -85,6 +81,40 @@
         </div>
     </div>
 </div>
+	<div class="field-label">Passager</div>
+	<div class="field-inner d-flex align-items-center">
+		<input type="text" id="passengerInput" class="form-control" name="field-name" value="" placeholder="Guests" readonly required>
+		<i class="alt-icon fa fa-user ms-2"></i>
+	</div>
+
+	<!-- Fenêtre contextuelle pour sélectionner les passagers -->
+	<div id="passengerDropdown" class="dropdown-passengers border p-3 bg-white shadow">
+		<div class="passenger-type d-flex justify-content-between align-items-center mb-3">
+			<span>Adultes</span>
+			<div>
+				<button class="btn btn-outline-secondary btn-sm" onclick="decreaseCount('adultCount')">-</button>
+				<span id="adultCount" class="mx-2">1</span>
+				<button class="btn btn-outline-secondary btn-sm" onclick="increaseCount('adultCount')">+</button>
+			</div>
+		</div>
+		<div class="passenger-type d-flex justify-content-between align-items-center mb-3">
+			<span>Enfants (2-12 ans)</span>
+			<div>
+				<button class="btn btn-outline-secondary btn-sm" onclick="decreaseCount('childCount')">-</button>
+				<span id="childCount" class="mx-2">0</span>
+				<button class="btn btn-outline-secondary btn-sm" onclick="increaseCount('childCount')">+</button>
+			</div>
+		</div>
+		<div class="passenger-type d-flex justify-content-between align-items-center mb-3">
+			<span>Bébés (0-2 ans)</span>
+			<div>
+				<button class="btn btn-outline-secondary btn-sm" onclick="decreaseCount('babyCount')">-</button>
+				<span id="babyCount" class="mx-2">0</span>
+				<button class="btn btn-outline-secondary btn-sm" onclick="increaseCount('babyCount')">+</button>
+			</div>
+		</div>
+		<button id="applyPassengers" class="btn btn-primary w-100">Appliquer</button>
+	</div>
 
 <script src="js.js">
   

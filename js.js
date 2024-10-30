@@ -41,6 +41,7 @@
             suggestionsBox.style.display = 'none';
         }
     });
+	
 
     // Hide suggestions when clicking outside the input
     document.addEventListener('click', function (e) {
@@ -48,3 +49,35 @@
             suggestionsBox.style.display = 'none';
         }
     });
+	document.getElementById("passengerInput").addEventListener("click", function() {
+    document.getElementById("passengerDropdown").classList.toggle("show");
+});
+
+// Fonction pour augmenter le nombre de passagers
+function increaseCount(id) {
+    let countElement = document.getElementById(id);
+    let count = parseInt(countElement.textContent);
+    countElement.textContent = count + 1;
+}
+
+// Fonction pour diminuer le nombre de passagers
+function decreaseCount(id) {
+    let countElement = document.getElementById(id);
+    let count = parseInt(countElement.textContent);
+    if (count > 0) {
+        countElement.textContent = count - 1;
+    }
+}
+
+// Appliquer la sélection des passagers et fermer la fenêtre
+document.getElementById("applyPassengers").addEventListener("click", function() {
+    let adultCount = document.getElementById("adultCount").textContent;
+    let childCount = document.getElementById("childCount").textContent;
+    let babyCount = document.getElementById("babyCount").textContent;
+    
+    let totalPassengers = parseInt(adultCount) + parseInt(childCount) + parseInt(babyCount);
+    document.getElementById("passengerInput").value = totalPassengers + " Passagers";
+    
+    document.getElementById("passengerDropdown").classList.remove("show");
+});
+

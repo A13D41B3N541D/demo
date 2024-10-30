@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nom de mon demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .page { display: none; } /* Cache toutes les pages par défaut */
+        .active { display: block; } /* Affiche uniquement la page active */
+    </style>
+</head>
+<body>
+    <div class="d-sm-inline-flex flex-column mb-3">
+        <div class="col-xs-2">
+            <!-- Formulaire pour entrer le nom et l'âge -->
+            <input type="text" class="form-control input-lg mb-2" name="nom" id="nom" placeholder="Entrez votre nom">
+            <input type="text" class="form-control mb-2" name="age" id="age" placeholder="Votre âge">
+            <input type="button" class="btn btn-success" onclick="saveAndAddToPage()" value="Ajouter">
+        </div>
+    </div>
+
+    <!-- Navigation pour les pages -->
+    <div class="mb-3">
+        <button class="btn btn-primary" onclick="showPage('under18')">Moins de 18 ans</button>
+        <button class="btn btn-primary" onclick="showPage('between18And50')">18 à 50 ans</button>
+        <button class="btn btn-primary" onclick="showPage('above50')">Plus de 50 ans</button>
+    </div>
+
+    <!-- Pages de listes d'utilisateurs selon l'âge -->
+    <div id="under18" class="page">
+        <h3>Utilisateurs de moins de 18 ans</h3>
+        <ul id="userListUnder18" class="list-group list-group-flush"></ul>
+    </div>
+    <div id="between18And50" class="page">
+        <h3>Utilisateurs de 18 à 50 ans</h3>
+        <ul id="userListBetween18And50" class="list-group list-group-flush"></ul>
+    </div>
+    <div id="above50" class="page">
+        <h3>Utilisateurs de plus de 50 ans</h3>
+        <ul id="userListAbove50" class="list-group list-group-flush"></ul>
+    </div>
+      <script src="demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
